@@ -1,1 +1,1 @@
-COMPILE : wasm-pack build --target web
+Rust with OpenGL
