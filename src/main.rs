@@ -1,8 +1,10 @@
+#![windows_subsystem = "windows"]
+
 use winit::{
     event::{Event, WindowEvent},
     event_loop::EventLoop,
     window::*,
-    dpi::*,
+    // dpi::*,
 };
 
 fn main() {
@@ -38,7 +40,7 @@ fn main() {
 
                 let size = window.inner_size();
                 let position = window.inner_position().unwrap();
-                window.set_title(&format!("{} X {} - {} X {}", size.width, size.height, position.x, position.y));
+                window.set_title(&format!("Oxidized: {} X {} - {} X {}", size.width, size.height, position.x, position.y));
                 window.request_redraw();
             },
             Event::RedrawRequested(_) => {
