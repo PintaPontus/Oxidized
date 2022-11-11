@@ -2,8 +2,7 @@
 name = "oxidized"
 version = "0.1.0"
 authors = ["PintaPontus <matteo.blascoviz@gmail.com>"]
-description = "Rust Hello World"
-repository = "https://github.com/PintaPontus/Oxidized"
+description = "Oxidized"
 edition = "2021"
 
 [lib]
