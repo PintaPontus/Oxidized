@@ -1,6 +1,8 @@
 [package]
 name = "oxidized"
 version = "0.1.0"
+authors = ["PintaPontus <matteo.blascoviz@gmail.com>"]
+description = "Oxidized OpenGL"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
