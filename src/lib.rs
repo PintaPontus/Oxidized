@@ -30,7 +30,7 @@ struct ProgramInfo(
 #[derive(Debug, Clone)]
 struct Buffers(WebGlBuffer, WebGlBuffer, WebGlBuffer);
 #[allow(non_snake_case)]
-#[wasm_bindgen(start)]
+#[wasm_bindgen]
 pub fn start() -> Result<(), JsValue> {
     set_panic_hook();
     /*============ Creating a canvas =================*/
@@ -183,7 +183,7 @@ pub fn start() -> Result<(), JsValue> {
             .unwrap();
             // Schedule ourself for another requestAnimationFrame callback.
             request_animation_frame(f.borrow().as_ref().unwrap());
-        }) as Box<FnMut(f32)>));
+        }) as Box<dyn FnMut(f32)>));
 
         request_animation_frame(g.borrow().as_ref().unwrap());
     }
