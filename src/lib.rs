@@ -38,6 +38,8 @@ pub fn start() -> Result<(), JsValue> {
     let canvas = document.get_element_by_id("canvas").unwrap();
     let canvas: web_sys::HtmlCanvasElement = canvas.dyn_into::<web_sys::HtmlCanvasElement>()?;
 
+	//TODO: inspect canvas
+
     let gl = canvas
         .get_context("webgl")?
         .unwrap()
@@ -104,12 +106,14 @@ pub fn start() -> Result<(), JsValue> {
     let phi = Rc::new(RefCell::new(0.0));
     let dX = Rc::new(RefCell::new(0.0));
     let dY = Rc::new(RefCell::new(0.0));
+	//TODO: inspect width and height
     let canvas_width = Rc::new(RefCell::new(canvas.width() as f32));
     let canvas_height = Rc::new(RefCell::new(canvas.height() as f32));
 
     // get canvas as event target
     let event_target: EventTarget = canvas.into();
 
+	//TODO: check events and their behavior
     // Add event listeners
     // MOUSEDOWN
     {
@@ -189,6 +193,7 @@ pub fn start() -> Result<(), JsValue> {
     }
     Ok(())
 }
+//TODO: search doc to non_snake_case
 #[allow(non_snake_case)]
 fn initShaderProgram(
     gl: &WebGlRenderingContext,
@@ -259,11 +264,11 @@ fn initBuffers(gl: &WebGlRenderingContext) -> Result<Buffers, JsValue> {
 
     let faceColors = [
         [1.0, 1.0, 1.0, 1.0], // Front face: white
-        [1.0, 0.0, 0.0, 1.0], // Back face: red
-        [0.0, 1.0, 0.0, 1.0], // Top face: green
-        [0.0, 0.0, 1.0, 1.0], // Bottom face: blue
-        [1.0, 1.0, 0.0, 1.0], // Right face: yellow
-        [1.0, 0.0, 1.0, 1.0], // Left face: purple
+        [1.0, 1.0, 1.0, 1.0], // Back face: red
+        [0.6, 0.6, 0.6, 1.0], // Top face: green
+        [0.6, 0.6, 0.6, 1.0], // Bottom face: blue
+        [0.3, 0.3, 0.3, 1.0], // Right face: yellow
+        [0.3, 0.3, 0.3, 1.0], // Left face: purple
     ];
     let color_array = {
         let color_vec: Vec<f32> = faceColors
