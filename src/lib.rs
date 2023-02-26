@@ -262,14 +262,14 @@ fn initBuffers(gl: &WebGlRenderingContext) -> Result<Buffers, JsValue> {
     // Now set up the colors for the faces. We'll use solid colors
     // for each face.
 
-    let faceColors = [
-        [1.0, 1.0, 1.0, 1.0], // Front face: white
-        [1.0, 1.0, 1.0, 1.0], // Back face: red
-        [0.6, 0.6, 0.6, 1.0], // Top face: green
-        [0.6, 0.6, 0.6, 1.0], // Bottom face: blue
-        [0.3, 0.3, 0.3, 1.0], // Right face: yellow
-        [0.3, 0.3, 0.3, 1.0], // Left face: purple
-    ];
+	let faceColors = [
+		[1.0, 1.0, 1.0, 1.0], // Front face: white
+		[1.0, 0.0, 0.0, 1.0], // Back face: red
+		[0.0, 1.0, 0.0, 1.0], // Top face: green
+		[0.0, 0.0, 1.0, 1.0], // Bottom face: blue
+		[1.0, 1.0, 0.0, 1.0], // Right face: yellow
+		[1.0, 0.0, 1.0, 1.0], // Left face: purple
+	];
     let color_array = {
         let color_vec: Vec<f32> = faceColors
             .iter()
